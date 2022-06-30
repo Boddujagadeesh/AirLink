@@ -1,0 +1,15 @@
+
+
+
+Payment Table:-
+
+create table Payment 
+(id int primary key identity(1,1),
+paymentType varchar(255) not null ,
+username varchar(255)not null,
+upiId varchar(255) ,
+password varchar(255) ,
+cardNumber nvarchar(255),
+expiryDate date ,
+cvv int check(len(cvv)=3),
+otp int check(len(otp)=6) not null)
