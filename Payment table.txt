@@ -1,0 +1,33 @@
+create table Payment
+(id int primary key identity(1,1),
+paymentType varchar(255) not null ,
+mobileNumber nvarchar(255) check(len(mobileNumber)=10) not null,
+username varchar(255)not null,
+upiId varchar(255) ,
+password varchar(255) ,
+cardNumber nvarchar(255) check(len(cardNumber)=16),
+expiryDate date ,
+cvv int check(len(cvv)=3),
+otp int check(len(otp)=6) not null)
+
+insert into Payment (paymentType,username,mobileNumber,upiId,password,otp) values
+('UPI','Vikaram',9988998899,'9453066980@upi','Vik@123',123456),
+('UPI','Bharath',9977997799,'8179416870@upi','Bharath@123',567890),
+('UPI','Jaysurya',9966996699,'8870739680@upi','Jay@123',321654)
+
+insert into Payment (paymentType,username,mobileNumber,password,cardNumber,expiryDate,cvv,otp) values
+('Credit Card','Kalpana',9955995599,'Kalpana@123',5600200065457302,'2023-07-25',202,787856),
+('Debit card','Jagadeesh',9944994499,'Jaga@123',8500200065459852,'2027-11-20',189,456789),
+('Credit Card','Sonal',9933993399,'Sonal@123',5600200065452453,'2025-02-06',147,789456),
+('Debit Card','Venkatesh',9922992299,'Venky@123',8500200065451816,'2025-02-06',852,654321)
+
+insert into Payment (paymentType,username,mobileNumber,password,otp) values
+('NET BANKING','Jaydev',9911991199,'JDev@123',639528),
+('NET BANKING','Piyush',9988997799,'Piyush@123',258147),
+('NET BANKING','Manoj',9988996699,'Manoj@123',369147)
+
+insert into Payment (paymentType,mobileNumber,username,password,otp)values
+('Wallet',9900990099,'Balaji','Balaji@123',965212),
+('Wallet',8800880088,'Guru','Guru@123',451253),
+('Wallet',7700770077,'Rubini','Rubini@123',321563)
+
